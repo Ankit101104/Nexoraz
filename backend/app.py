@@ -51,10 +51,9 @@ uri = f"mongodb+srv://as23022004:{quote_plus(db_password)}@nexoraz-main.ywrni7j.
 # Create MongoDB client with SSL configuration
 client = MongoClient(
     uri,
+    tls=True,  
     tlsCAFile=certifi.where(),
-    tlsAllowInvalidCertificates=False,
-    serverSelectionTimeoutMS=20000,
-    ssl=True
+    serverSelectionTimeoutMS=20000
 )
 # Test connection
 client.admin.command('ping')
