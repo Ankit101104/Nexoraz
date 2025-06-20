@@ -95,17 +95,42 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = new URLSearchParams();
+  form.append('name', formData.name);
+  form.append('email', formData.email);
+  form.append('subject', formData.subject);
+  form.append('message', formData.message);
+
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxJtkkBxK1f2TpBWLlWso2GQuXwQWqjGoW086qOScm9CmnfChNK1KAieeEQ9a27sQKu/exec', {
+      method: 'POST',
+      body: form,
+    });
+
+    const result = await response.json();
+
+    if (result.result === 'success') {
+      setSnackbar({
+        open: true,
+        message: 'Message sent successfully!',
+        severity: 'success'
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      throw new Error(result.error);
+    }
+  } catch (error) {
     setSnackbar({
       open: true,
-      message: 'Message sent successfully!',
-      severity: 'success'
+      message: 'Error sending message. Please try again.',
+      severity: 'error'
     });
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  }
+};
+
 
   const contactInfo = [
     {
