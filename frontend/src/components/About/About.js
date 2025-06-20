@@ -34,22 +34,22 @@ import {
 const teamMembers = [
   {
     name: 'Rohit Prajapat',
-    role: 'Founder & Lead Developer',
+    role: 'Founder & Lead Designer',
     image: '/team/rohit.jpg',
-    description: 'Full-stack developer passionate about building scalable applications and integrating cutting-edge AI technologies. Specializes in knowledge graph visualization and distributed systems.',
-    skills: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'System Architecture', 'GraphQL'],
-    achievements: ['Led development of core platform', 'Implemented AI integration', 'Designed system architecture'],
+    description: 'Creative technologist with expertise in UI/UX design and frontend development. Passionate about creating intuitive user experiences and beautiful, responsive interfaces.',
+    skills: ['UI/UX Design', 'React', 'Frontend Architecture', 'Design Systems', 'Responsive Design', 'Animation'],
+    achievements: ['Designed core user interface', 'Created design system', 'Improved user experience'],
     linkedin: 'https://linkedin.com/in/rohit-prajapat-878bb2255/',
     github: 'https://github.com/rohit98626',
     education: 'B.Tech in Computer Science with Specialization in AI'
   },
   {
     name: 'Ankit Singh',
-    role: 'Co-Founder & Lead Designer',
+    role: 'Co-Founder & Lead Developer',
     image: '/team/ankit.png',
-    description: 'Creative technologist with expertise in UI/UX design and frontend development. Passionate about creating intuitive user experiences and beautiful, responsive interfaces.',
-    skills: ['UI/UX Design', 'React', 'Frontend Architecture', 'Design Systems', 'Responsive Design', 'Animation'],
-    achievements: ['Designed core user interface', 'Created design system', 'Improved user experience'],
+    description: 'Full-stack developer passionate about building scalable applications and integrating cutting-edge AI technologies. Specializes in knowledge graph visualization and distributed systems.',
+    skills: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'System Architecture', 'Java'],
+    achievements: ['Led development of core platform', 'Implemented AI integration', 'Designed system architecture'],
     linkedin: 'https://linkedin.com/in/ankit101104',
     github: 'https://github.com/Ankit101104',
     education: 'B.Tech in Computer Science with Specialization in AI'
