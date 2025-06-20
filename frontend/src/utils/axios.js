@@ -31,14 +31,14 @@ instance.interceptors.response.use(
     const status = error?.response?.status;
     const isLoginPage = window.location.pathname === '/login';
 
-    // Only redirect to login for 401 errors outside login page
+  
     if (status === 401 && !isLoginPage) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
 
-    return Promise.reject(error); // Let login component handle it
+    return Promise.reject(error); 
   }
 );
 
