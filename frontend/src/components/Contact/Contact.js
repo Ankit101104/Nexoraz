@@ -117,7 +117,7 @@ const Contact = () => {
     {
       icon: <PhoneIcon sx={{ fontSize: 32 }} />,
       title: 'Phone',
-      content: '+91 7357707100'
+      content: '+91 8239336975'
     },
     {
       icon: <LocationIcon sx={{ fontSize: 32 }} />,
