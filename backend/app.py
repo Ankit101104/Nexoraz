@@ -593,6 +593,14 @@ app.register_blueprint(user_routes)
 app.register_blueprint(payment_routes)
 app.register_blueprint(chat_routes)
 
+@app.route('/')
+def home():
+    return jsonify({
+        'message': 'Nexoraz Backend is live 🎉',
+        'status': 'OK'
+    }), 200
+
+
 if __name__ == '__main__':
     try:
         # Test MongoDB connection
