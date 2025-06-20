@@ -11,5 +11,5 @@ gunicorn
 openai>=1.10 
 setuptools<81
 certifi
-python_version = 3.11
+python_version =3.11
 
