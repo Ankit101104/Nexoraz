@@ -28,14 +28,18 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.log('Response error:', error.response);
-    if (error.response?.status === 401) {
+    const status = error?.response?.status;
+    const isLoginPage = window.location.pathname === '/login';
+
+    // Only redirect to login for 401 errors outside login page
+    if (status === 401 && !isLoginPage) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
-    return Promise.reject(error);
+
+    return Promise.reject(error); // Let login component handle it
   }
 );
 
-export default instance; 
+export default instance;
