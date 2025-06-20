@@ -29,7 +29,7 @@ const SocialIcon = styled(IconButton)`
 const socialLinks = [
   { 
     Icon: FaLinkedin, 
-    url: 'https://www.linkedin.com/in/rohit-prajapat-878bb2255',
+    url: 'https://www.linkedin.com/in/ankit-singh-48004a24b',
     label: 'LinkedIn'
   },
   { 
