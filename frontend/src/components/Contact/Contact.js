@@ -105,7 +105,7 @@ const handleSubmit = async (e) => {
   form.append('message', formData.message);
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxJtkkBxK1f2TpBWLlWso2GQuXwQWqjGoW086qOScm9CmnfChNK1KAieeEQ9a27sQKu/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzIRe4MYNcOWX4ZvNdJMwmkQkT9nxMVFDPWAOyoBXBINgyVTGgxOfwSNHdCBeox0SqR/exec', {
       method: 'POST',
       body: form,
     });
