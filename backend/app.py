@@ -158,24 +158,29 @@ def login():
     try:
         data = request.json
         user = db.users.find_one({'email': data['email']})
-        
-        if user and bcrypt.checkpw(data['password'].encode('utf-8'), user['password']):
-            access_token = create_access_token(
-                identity=str(user['_id']),
-                expires_delta=timedelta(days=1)
-            )
-            return jsonify({
-                'token': access_token,
-                'user': {
-                    'id': str(user['_id']),
-                    'username': user['username'],
-                    'email': user['email']
-                }
-            })
-        return jsonify({'error': 'Invalid credentials'}), 401
+
+        if not user:
+            return jsonify({'error': 'User not found'}), 404
+
+        if not bcrypt.checkpw(data['password'].encode('utf-8'), user['password']):
+            return jsonify({'error': 'Incorrect password'}), 401
+
+        access_token = create_access_token(
+            identity=str(user['_id']),
+            expires_delta=timedelta(days=1)
+        )
+        return jsonify({
+            'token': access_token,
+            'user': {
+                'id': str(user['_id']),
+                'username': user['username'],
+                'email': user['email']
+            }
+        }), 200
     except Exception as e:
         logger.error(f"Login error: {e}")
         return jsonify({'error': 'Login failed'}), 500
+
 
 @app.route('/api/graphs', methods=['GET'])
 @jwt_required()
